@@ -1,21 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {MapView,MapMarker} from 'react-native-maps';
+import {MapView} from 'react-native-maps';
 
-function App(){
-  return (
+export default function App(){
+  return(
     <View style={styles.container}>
-      <Text>Mapa</Text>
-      <View style={{height: 100, width: 100, backgroundColor: 'red'}}>
-        <MapView style={{flex: 1}}>
-          <MapMarker coordinate={{latitude: 37.78825, longitude: -122.4324}}/>
-        </MapView>
-      </View>
+      <Text>Open up App.js to start working on your app!</Text>
+      <MapView style={{flex:1}}/>
     </View>
   );
 }
 
-export default App;
 
 const styles = StyleSheet.create({
   container: {
