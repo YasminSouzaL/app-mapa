@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { MapView, Marker } from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
+import { PROVIDER_DEFAULT, PROVIDER_OSM } from '@react-native-mapbox/osmdroid';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <MapView style={{ width: 400, height: 400 }}
+      <Text style ={ styles.texto}>Mapa Abaixo: </Text>
+      <MapView 
+        provider={PROVIDER_OSM}
+        style={styles.mapStyle}
         region={{
           latitude: -19.19700,
           longitude: -46.23719,
@@ -19,8 +22,16 @@ export default function App() {
             latitude: -19.19700,
             longitude: -46.23719,
           }}
-          title="Casa"
-          description="Minha casa"
+          title="Minha Casa"
+          description="Aqui é minha casa"
+        />
+        <Marker
+          coordinate={{
+            latitude: -19.21748,
+            longitude: -46.22327,
+          }}
+          title="UFV-CRP"
+          description="Aqui é a UFV-CRP"
         />
       </MapView>
     </View>
@@ -30,8 +41,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#dee3e0',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  texto: {
+    fontSize: 22,
+    color: '#000000',
+    fontWeight: 'bold',
+    backgroundColor: '#ffffff',
+  },
+  mapStyle: {
+    width: 300,
+    height: 300,
   },
 });
