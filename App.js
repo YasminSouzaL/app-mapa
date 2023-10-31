@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
-import { PROVIDER_DEFAULT, PROVIDER_OSM } from '@react-native-mapbox/osmdroid';
+import MapView, { Marker } from 'react-native-maps';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style ={ styles.texto}>Mapa Abaixo: </Text>
-      <MapView 
-        provider={PROVIDER_OSM}
+      <Text style={styles.texto}>Mapa Abaixo: </Text>
+      <MapView
+        provider="osmdroid" // Use o provedor OpenStreetMap
         style={styles.mapStyle}
         region={{
-          latitude: -19.19700,
+          latitude: -19.197,
           longitude: -46.23719,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
@@ -19,7 +18,7 @@ export default function App() {
       >
         <Marker
           coordinate={{
-            latitude: -19.19700,
+            latitude: -19.197,
             longitude: -46.23719,
           }}
           title="Minha Casa"
